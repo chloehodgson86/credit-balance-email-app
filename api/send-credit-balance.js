@@ -1,6 +1,6 @@
 import sgMail from '@sendgrid/mail';
 
-const required = ['SENDGRID_API_KEY', 'SENDGRID_FROM_EMAIL'];
+const required = ['SENDGRID_API_KEY'];
 
 function money(value) {
   const n = Number(value || 0);
@@ -129,10 +129,10 @@ export default async function handler(req, res) {
     const msg = {
       to,
       from: {
-        email: process.env.SENDGRID_FROM_EMAIL,
+    email: process.env.SENDGRID_FROM_EMAIL || 'chloe.hodgson@paramountliquor.com.au',
         name: process.env.SENDGRID_FROM_NAME || 'Paramount Liquor Accounts'
       },
-      replyTo: process.env.SENDGRID_REPLY_TO || process.env.SENDGRID_FROM_EMAIL,
+    replyTo: process.env.SENDGRID_REPLY_TO || process.env.SENDGRID_FROM_EMAIL || 'chloe.hodgson@paramountliquor.com.au',
       subject: subject || `Paramount Liquor – Credit Balance – ${customerId || customerName || 'Account'}`,
       customArgs: {
         app: 'credit-balance-email-app',
