@@ -37,41 +37,244 @@ function buildHtml(data) {
   const credits = Array.isArray(data.credits) ? data.credits : [];
 
   return `
-  <div style="font-family:Arial,sans-serif;color:#1f2937;line-height:1.5;max-width:760px">
-    <p>Hi ${customerName},</p>
+  <div style="
+    background:#f3f4f6;
+    padding:40px 20px;
+    font-family:Arial,sans-serif;
+  ">
 
-    <p>Our records show your Paramount Liquor account currently has a credit balance of <strong>${creditAmount}</strong>${customerId ? ` for account <strong>${customerId}</strong>` : ''}.</p>
+    <div style="
+      max-width:760px;
+      margin:0 auto;
+      background:#ffffff;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid #e5e7eb;
+      box-shadow:0 4px 14px rgba(0,0,0,0.06);
+    ">
 
-    ${credits.length ? `
-      <p>Please see the credit details below:</p>
+      <!-- Header -->
+      <div style="
+        background:#ffffff;
+        padding:36px 32px;
+        border-bottom:1px solid #e5e7eb;
+        text-align:center;
+      ">
 
-      <table style="border-collapse:collapse;width:100%;font-family:Arial,sans-serif;font-size:14px;margin:14px 0">
-        <thead>
-          <tr style="background:#f3f4f6">
-            <th style="padding:8px;text-align:left;border-bottom:1px solid #d1d5db">Date</th>
-            <th style="padding:8px;text-align:left;border-bottom:1px solid #d1d5db">Invoice ID</th>
-            <th style="padding:8px;text-align:left;border-bottom:1px solid #d1d5db">PO Num</th>
-            <th style="padding:8px;text-align:right;border-bottom:1px solid #d1d5db">Credit Amount</th>
-          </tr>
-        </thead>
-        <tbody>${buildCreditRows(credits)}</tbody>
-        <tfoot>
-          <tr>
-            <td colspan="3" style="padding:8px;text-align:right"><strong>Total Credit</strong></td>
-            <td style="padding:8px;text-align:right"><strong>${creditAmount}</strong></td>
-          </tr>
-        </tfoot>
-      </table>
-    ` : ''}
+        <div style="
+          font-size:34px;
+          font-weight:800;
+          color:#24246b;
+          line-height:1;
+          letter-spacing:0.5px;
+        ">
+          PARAMOUNT<br/>LIQUOR
+        </div>
 
-    <p>Please reply to this email confirming whether you would like this credit applied to future invoices, or if you require this to be reviewed further by our Accounts team.</p>
+        <div style="
+          height:6px;
+          width:140px;
+          background:linear-gradient(
+            90deg,
+            #2fbf71,
+            #ffcc33,
+            #ef476f,
+            #3a86ff
+          );
+          margin:22px auto 0;
+          border-radius:999px;
+        "></div>
 
-    <p>If this has already been discussed or resolved, please disregard this message.</p>
+        <div style="
+          color:#6b7280;
+          font-size:13px;
+          margin-top:14px;
+          letter-spacing:0.3px;
+        ">
+          Accounts Receivable
+        </div>
 
-    <p>Kind regards,<br/>Paramount Liquor Accounts</p>
-  </div>`;
+      </div>
+
+      <!-- Body -->
+      <div style="
+        padding:40px 32px;
+        color:#111827;
+        line-height:1.7;
+      ">
+
+        <p style="
+          margin-top:0;
+          font-size:15px;
+        ">
+          Hi ${customerName},
+        </p>
+
+        <p style="
+          font-size:15px;
+        ">
+          Our records show your Paramount Liquor account currently has a credit balance of
+          <strong style="color:#24246b">${creditAmount}</strong>
+          ${customerId ? ` for account <strong>${customerId}</strong>` : ''}.
+        </p>
+
+        ${credits.length ? `
+          <div style="margin:34px 0">
+
+            <div style="
+              background:#24246b;
+              color:#ffffff;
+              padding:14px 18px;
+              font-weight:bold;
+              border-radius:10px 10px 0 0;
+              font-size:14px;
+              letter-spacing:0.3px;
+            ">
+              CREDIT BREAKDOWN
+            </div>
+
+            <table style="
+              border-collapse:collapse;
+              width:100%;
+              font-size:14px;
+              border:1px solid #e5e7eb;
+            ">
+
+              <thead>
+                <tr style="background:#f9fafb">
+                  <th style="
+                    padding:14px;
+                    text-align:left;
+                    border-bottom:1px solid #e5e7eb;
+                    color:#374151;
+                  ">
+                    Date
+                  </th>
+
+                  <th style="
+                    padding:14px;
+                    text-align:left;
+                    border-bottom:1px solid #e5e7eb;
+                    color:#374151;
+                  ">
+                    Invoice ID
+                  </th>
+
+                  <th style="
+                    padding:14px;
+                    text-align:left;
+                    border-bottom:1px solid #e5e7eb;
+                    color:#374151;
+                  ">
+                    PO Num
+                  </th>
+
+                  <th style="
+                    padding:14px;
+                    text-align:right;
+                    border-bottom:1px solid #e5e7eb;
+                    color:#374151;
+                  ">
+                    Credit Amount
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody>
+                ${buildCreditRows(credits)}
+              </tbody>
+
+              <tfoot>
+                <tr style="background:#f9fafb">
+
+                  <td colspan="3" style="
+                    padding:16px;
+                    text-align:right;
+                    font-weight:bold;
+                    border-top:2px solid #d1d5db;
+                    color:#111827;
+                  ">
+                    Total Credit
+                  </td>
+
+                  <td style="
+                    padding:16px;
+                    text-align:right;
+                    font-weight:bold;
+                    border-top:2px solid #d1d5db;
+                    color:#24246b;
+                    font-size:15px;
+                  ">
+                    ${creditAmount}
+                  </td>
+
+                </tr>
+              </tfoot>
+
+            </table>
+
+          </div>
+        ` : ''}
+
+        <div style="
+          background:#f9fafb;
+          border-left:4px solid #24246b;
+          padding:18px 20px;
+          margin:34px 0;
+          border-radius:6px;
+          font-size:14px;
+          color:#374151;
+        ">
+          Please reply to this email confirming whether you would like this credit applied to future invoices, or if you require this to be reviewed further by our Accounts team.
+        </div>
+
+        <p style="
+          font-size:14px;
+          color:#4b5563;
+        ">
+          If this has already been discussed or resolved, please disregard this message.
+        </p>
+
+        <p style="
+          margin-top:38px;
+          font-size:15px;
+        ">
+          Kind regards,<br/>
+          <strong style="color:#24246b">
+            Paramount Liquor Accounts
+          </strong>
+        </p>
+
+      </div>
+
+      <!-- Footer -->
+      <div style="
+        background:#24246b;
+        color:#d1d5db;
+        padding:24px 32px;
+        font-size:12px;
+        line-height:1.6;
+        text-align:center;
+      ">
+
+        <div style="
+          font-weight:bold;
+          color:#ffffff;
+          margin-bottom:4px;
+          letter-spacing:0.4px;
+        ">
+          PARAMOUNT LIQUOR
+        </div>
+
+        Accounts Receivable Team
+
+      </div>
+
+    </div>
+
+  </div>
+  `;
 }
-
 function buildText(data) {
   const credits = Array.isArray(data.credits) ? data.credits : [];
   const creditLines = credits
