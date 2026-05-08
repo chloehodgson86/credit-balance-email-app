@@ -54,85 +54,34 @@ function buildHtml(data) {
     ">
 
 <!-- Header -->
+<!-- Header -->
 <div style="
   background:#ffffff;
-  padding:36px 32px;
+  padding:34px 32px;
   border-bottom:1px solid #e5e7eb;
   text-align:center;
 ">
-
-  <img
-    src="raw.githubusercontent.com/chloehodgson86/credit-balance-email-app/main/Paramount%20logo.png"
-    alt="Paramount Liquor"
-    style="
-      max-width:260px;
-      width:100%;
-      height:auto;
-      margin:0 auto 18px;
-      display:block;
-    "
-  />
-
   <div style="
-    height:6px;
-    width:140px;
-    background:linear-gradient(
-      90deg,
-      #2fbf71,
-      #ffcc33,
-      #ef476f,
-      #3a86ff
-    );
-    margin:18px auto 0;
-    border-radius:999px;
-  "></div>
+    font-size:34px;
+    font-weight:800;
+    color:#24246b;
+    line-height:1;
+    letter-spacing:0.5px;
+  ">
+    PARAMOUNT<br/>LIQUOR
+  </div>
 
   <div style="
     color:#6b7280;
     font-size:13px;
-    margin-top:14px;
+    margin-top:16px;
     letter-spacing:0.3px;
   ">
     Accounts Receivable
   </div>
-
 </div>
 
-        <div style="
-          font-size:34px;
-          font-weight:800;
-          color:#24246b;
-          line-height:1;
-          letter-spacing:0.5px;
-        ">
-          PARAMOUNT<br/>LIQUOR
-        </div>
-
-        <div style="
-          height:6px;
-          width:140px;
-          background:linear-gradient(
-            90deg,
-            #2fbf71,
-            #ffcc33,
-            #ef476f,
-            #3a86ff
-          );
-          margin:22px auto 0;
-          border-radius:999px;
-        "></div>
-
-        <div style="
-          color:#6b7280;
-          font-size:13px;
-          margin-top:14px;
-          letter-spacing:0.3px;
-        ">
-          Accounts Receivable
-        </div>
-
-      </div>
-
+<!-- Body -->
       <!-- Body -->
       <div style="
         padding:40px 32px;
