@@ -1,6 +1,6 @@
 import sgMail from '@sendgrid/mail';
 
-const required = ['SENDGRID_API_KEY', 'SENDGRID_FROM_EMAIL'];
+const required = ['SENDGRID_API_KEY'];
 
 function money(value) {
   const n = Number(value || 0);
