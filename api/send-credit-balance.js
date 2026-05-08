@@ -329,9 +329,9 @@ email: 'accounts@paramountliquor.com.au',
       }
     };
 
-    if (process.env.SENDGRID_CREDIT_TEMPLATE_ID) {
-      msg.templateId = process.env.SENDGRID_CREDIT_TEMPLATE_ID;
-      msg.dynamicTemplateData = {
+if (process.env.SENDGRID_CREDIT_TEMPLATE_ID) {
+  msg.templateId = process.env.SENDGRID_CREDIT_TEMPLATE_ID;
+  msg.dynamicTemplateData = {
         customerName,
         customerId,
         creditAmount: money(creditAmount),
