@@ -62,7 +62,7 @@ function buildHtml(data) {
 ">
 
   <img
-    src="https://i.imgur.com/0KFBHTB.png"
+    src="raw.githubusercontent.com/chloehodgson86/credit-balance-email-app/main/Paramount%20logo.png"
     alt="Paramount Liquor"
     style="
       max-width:260px;
