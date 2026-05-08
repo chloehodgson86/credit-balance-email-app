@@ -125,7 +125,7 @@ export default async function handler(req, res) {
     await sgMail.send(msg);
     return res.status(200).json({ ok: true });
   } catch (error) {
-    const detail = error?.response?.body || error.message;
-    return res.status(500).json({ error: 'SendGrid send failed', detail });
+const errorBody = await response.text();
+throw new Error(`SendGrid failed: ${response.status} ${errorBody}`);
   }
 }
