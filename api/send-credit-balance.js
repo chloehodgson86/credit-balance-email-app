@@ -129,10 +129,10 @@ export default async function handler(req, res) {
     const msg = {
       to,
       from: {
-    email: process.env.SENDGRID_FROM_EMAIL || 'chloe.hodgson@paramountliquor.com.au',
+email: 'accounts@paramountliquor.com.au',
         name: process.env.SENDGRID_FROM_NAME || 'Paramount Liquor Accounts'
       },
-    replyTo: process.env.SENDGRID_REPLY_TO || process.env.SENDGRID_FROM_EMAIL || 'chloe.hodgson@paramountliquor.com.au',
+email: 'accounts@paramountliquor.com.au',
       subject: subject || `Paramount Liquor – Credit Balance – ${customerId || customerName || 'Account'}`,
       customArgs: {
         app: 'credit-balance-email-app',
